@@ -9,11 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_DEFAULT_REGION: us-east-1
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -25,9 +20,9 @@ jobs:
 
       - name: Configure AWS CLI
         run: |
-          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile default
-          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile default
-          aws configure set default.region $AWS_DEFAULT_REGION --profile default
+          aws configure set aws_access_key_id "AKIA6ODU4LUD5Y3T6E62"
+          aws configure set aws_secret_access_key "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"
+          aws configure set default.region "us-east-1"
 
       - name: Deploy to S3
         run: |
