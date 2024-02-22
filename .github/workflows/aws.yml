@@ -20,8 +20,8 @@ jobs:
 
       - name: Configure AWS CLI
         run: |
-          aws configure set aws_access_key_id "AKIA6ODU4LUD5Y3T6E62"
-          aws configure set aws_secret_access_key "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"
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set default.region "us-east-1"
 
       - name: Deploy to S3
